@@ -11,6 +11,7 @@ import 'package:flutter_crypto_wallet/presentation/pages/status_page.dart';
     AutoRoute(page: ConvertPage),
     AutoRoute(page: ConfirmationPage),
     AutoRoute(page: StatusPage),
+    AutoRoute(page: PortafolioPage),
   ],
 )
 class $AppRouter {}
