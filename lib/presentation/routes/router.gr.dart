@@ -12,6 +12,8 @@ import '../pages/convert_page.dart' as _i4;
 import '../pages/home_page.dart' as _i3;
 import '../pages/status_page.dart' as _i6;
 
+import '../pages/portafolio_page.dart' as _i7;
+
 class AppRouter extends _i1.RootStackRouter {
   AppRouter([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
       : super(navigatorKey);
@@ -41,6 +43,11 @@ class AppRouter extends _i1.RootStackRouter {
         routeData: routeData,
         builder: (_) {
           return const _i6.StatusPage();
+        }),
+      PortafolioRoute.name: (routeData) =>_i1.MeterialPageX<dynamics>(
+        routeData: routeData,
+        builder: (_) {
+           return const _i7.PortafolioPage(); 
         })
   };
 
@@ -49,7 +56,8 @@ class AppRouter extends _i1.RootStackRouter {
         _i1.RouteConfig(HomeRoute.name, path: '/'),
         _i1.RouteConfig(ConvertRoute.name, path: '/convert-page'),
         _i1.RouteConfig(ConfirmationRoute.name, path: '/confirmation-page'),
-        _i1.RouteConfig(StatusRoute.name, path: '/status-page')
+        _i1.RouteConfig(StatusRoute.name, path: '/status-page'),
+        _i1.RouteConfig(StatusRoute.name, path: '/portafolio-page')
       ];
 }
 
@@ -89,4 +97,17 @@ class StatusRoute extends _i1.PageRouteInfo {
   const StatusRoute() : super(name, path: '/status-page');
 
   static const String name = 'StatusRoute';
+}
+    //test
+class PortafolioRoute extends _i1.PageRouteInfo<PortafolioRouteArgs> {
+  PortafolioRoute({_i7.Key? key})
+      : super(name, path: '/portafolio-page', args: PortafolioRouteArgs(key: key));
+
+  static const String name = 'PortafolioRoute';
+}
+
+class ConvertRouteArgs {
+  const PortafolioRouteArgs({this.key});
+
+  final _i7.Key? key;
 }
